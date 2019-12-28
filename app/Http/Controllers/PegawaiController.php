@@ -30,6 +30,25 @@ class PegawaiController extends Controller
         // alihkan halaman ke halaman pegawai
         return redirect('/pegawai');
     }
+    //Method untuk show isian yang akan diisi
+    public function edit($id){
+        //mengambil data pegawai berdasarkan id yang dipilih
+        $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
+        //passing data pegawai yang didapat ke view 
+        return view('pegawai/edit',['pegawai'=>$pegawai]);
+    }
+    //Fungsi simpan sebenarnya
+    public function update(Request $request){
+        //update data pegawai
+        DB::table('pegawai')->where('pegawai_id',$request->id)->update([
+            'pegawai_nama' => $request->nama,
+            'pegawai_jabatan'=> $request->jabatan,
+            'pegawai_umur' => $request->umur,
+            'pegawai_alamat' => $request->alamat
+        ]);
+        //Alihkan halaman ke pegawai
+        return redirect('/pegawai');
+    }
     public function formulir(){
         return view('formulir');
     }
