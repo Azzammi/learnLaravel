@@ -25,3 +25,6 @@ Route::post('/formulir/proses','PegawaiController@proses');
 Route::get('/blog','BlogController@home');
 Route::get('/blog/tentang','BlogController@tentang');
 Route::get('/blog/kontak','BlogController@kontak');
+
+/* Latihan part 9 */
+Route::get('/pegawai','PegawaiController@index');
