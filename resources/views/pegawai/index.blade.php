@@ -4,8 +4,15 @@
 	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
 </head>
 <body>
+	<style type="text/css">
+		.pagination li{
+			float: left;
+			list-style-type: none;
+			margin:5px;
+		}
+	</style>
 
-	<h2>www.malasngoding.com</h2>
+	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
 	<h3>Data Pegawai</h3>
 
 	<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
@@ -36,6 +43,12 @@
 		@endforeach
 	</table>
 
+	<br/>
+	Halaman : {{ $pegawai->currentPage() }} <br/>
+	Jumlah Data : {{ $pegawai->total() }} <br/>
+	Data Per Halaman : {{ $pegawai->perPage() }} <br/> 
+ 
+	{{ $pegawai->links() }}
 
 </body>
 </html>
