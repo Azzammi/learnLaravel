@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 /* Latihan part 1-6 Malasngoding */
@@ -34,3 +34,7 @@ Route::post('/pegawai/store','PegawaiController@store');
 Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::post('/pegawai/update','PegawaiController@update');
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+
+/* Latihan part 18 */
+Route::get('/input','MalasngodingController@input');
+Route::post('/proses','MalasngodingController@proses');
